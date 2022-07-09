@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row ">
+      <div class="col-sm">
+      </div>
+      <div class="col-sm">
+        <p class="text-center">
+          <h5 class="text-center">
+            {% with messages = get_flashed_messages() %}
+              {% if messages %}
+                {{ messages[0] }}
+                {% if messages[1] %}
+                  <a href="{{ url_for('redirect_to_url', short_url=messages[1], _external=True) }}">{{ url_for('redirect_to_url', short_url=messages[1], _external=True) }}</a>
+                {% endif %}
+              {% endif %}
+            {% endwith %}
+          </h5>
+        </p>
+      </div>
+      <div class="col-sm">
+      </div>
+    </div>
+</div>
