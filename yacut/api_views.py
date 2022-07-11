@@ -24,7 +24,7 @@ def create_short_url():
         if URL_map.query.filter_by(short=short).first() is not None:
             raise InvalidAPIUsage(constants.API_NAME_BUSY.format(short))
     else:
-        short = get_unique_short_id(6)
+        short = get_unique_short_id(constants.LEN_SHORT_URL)
     url_link = URL_map(
         original=original,
         short=short
