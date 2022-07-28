@@ -21,6 +21,16 @@
           {% endif %}
         </p>
       </div>
-      {{ form.submit(class="btn btn-primary", value="Создать") }}
+      <div>
+        {{ form.time_live(class="form-control form-control-lg py-2 mb-3", id="form-time_live", placeholder=form.time_live.label.text) }}
+        <p>
+          {% if form.time_live.errors %}
+            {% for error in form.time_live.errors %}
+              <span style="color: red">{{ error }}</span>
+            {% endfor %}
+          {% endif %}
+        </p>
+      </div>
+      {{ form.submit(class="btn btn-primary", value=form.submit.label.text) }}
     </div
 </form>
