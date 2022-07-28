@@ -42,6 +42,18 @@ python3 -m pip install --upgrade pip
 ```
 pip install -r requirements.txt
 ```
+Создать файл .env
+```
+touch .env
+```
+Записать в этот файл такие данные:
+```
+FLASK_APP= Имя вашего приложения
+FLASK_ENV=development
+DATABASE_URI=sqlite:///db.sqlite3 - название базы данных
+SECRET_KEY=WTF KEY - секретный ключ
+```
+
 Создать базу для сохранения данных
 ```
 flask db upgrade
