@@ -5,7 +5,6 @@ from flask_sqlalchemy import SQLAlchemy
 
 from settings import Config
 
-# from .models import User
 
 app = Flask(__name__)
 app.config.from_object(Config)
