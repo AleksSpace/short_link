@@ -19,26 +19,26 @@ cd yacut
 
 Cоздать и активировать виртуальное окружение:
 
-```
-python3 -m venv venv
-```
-
 * Если у вас Linux/MacOS
-
+    ```
+    python3 -m venv venv
+    ```
     ```
     source venv/bin/activate
     ```
 
 * Если у вас windows
-
+    ```
+    python -m venv venv
+    ```
     ```
     source venv/scripts/activate
     ```
 
-Установить зависимости из файла requirements.txt:
+Обновить pip и установить зависимости из файла requirements.txt:
 
 ```
-python3 -m pip install --upgrade pip
+python -m pip install --upgrade pip
 ```
 
 ```
@@ -50,7 +50,7 @@ touch .env
 ```
 Записать в этот файл такие данные:
 ```
-FLASK_APP= Имя вашего приложения
+FLASK_APP=short_link - Имя вашего приложения
 FLASK_ENV=development
 DATABASE_URI=sqlite:///db.sqlite3 - название базы данных
 SECRET_KEY=WTF KEY - секретный ключ

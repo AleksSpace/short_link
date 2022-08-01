@@ -1,4 +1,3 @@
-# from pprint import pprint
 from random import choices
 
 from .constants import SYMBOLS

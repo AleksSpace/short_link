@@ -8,7 +8,7 @@ from . import app, constants, db
 from .forms import LinkForm, LoginForm, RegForm
 from .models import URL_map, User
 from .utils import check_short_url, get_unique_short_id
-from yacut import login_manager
+from short_link import login_manager
 
 
 @app.route('/', methods=['GET', 'POST'])

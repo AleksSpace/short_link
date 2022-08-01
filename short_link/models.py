@@ -1,11 +1,10 @@
 from datetime import datetime
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
-# from yacut import login_manager
 
 import pytz
 
-from yacut import db
+from short_link import db
 
 
 class URL_map(db.Model):
