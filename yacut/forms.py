@@ -1,7 +1,8 @@
 from datetime import datetime
 
 from flask_wtf import FlaskForm
-from wtforms import DateTimeField, StringField, SubmitField, URLField
+from wtforms import (DateTimeField, StringField, SubmitField,
+                     URLField, PasswordField, BooleanField, EmailField)
 from wtforms.validators import (URL, DataRequired, Length, Optional, Regexp,
                                 ValidationError)
 
@@ -39,3 +40,18 @@ class LinkForm(FlaskForm):
             raise ValidationError(constants.NO_FORMAT_DATE)
         if time_from_form < datetime.now():
             raise ValidationError(constants.NO_DATETIME_PAST)
+
+
+class RegForm(FlaskForm):
+    name = StringField("Введите имя", validators=[DataRequired()])
+    username = StringField("Придумайте логин", validators=[DataRequired()])
+    password = PasswordField("Введите пароль", validators=[DataRequired()])
+    email = EmailField("Email", validators=[DataRequired()])
+    submit = SubmitField("Зарегистрировать")
+
+
+class LoginForm(FlaskForm):
+    username = StringField("Введите логин", validators=[DataRequired()])
+    password = PasswordField("Введите пароль", validators=[DataRequired()])
+    remember = BooleanField("Запомнить меня")
+    submit = SubmitField("Вход")

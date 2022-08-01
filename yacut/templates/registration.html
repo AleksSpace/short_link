@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="py-5">
+  <h1>Регистрация пользователя</h1>
+</div>
+<form method="POST" class="container row my-5 px-5" novalidate>
+    {{ form.csrf_token }}
+    <div>
+      <div>
+        {{ form.name(class="form-control form-control-lg py-2 mb-3", id="form-name", placeholder=form.name.label.text) }}
+        <p>
+            {% if form.name.errors %}
+            {% for error in form.name.errors %}
+                <span style="color: red">{{ error }}</span>
+            {% endfor %}
+            {% endif %}
+        </p>
+      </div>
+      <div>
+        {{ form.username(class="form-control form-control-lg py-2 mb-3", id="form-username", placeholder=form.username.label.text) }}
+        <p>
+          {% if form.username.errors %}
+            {% for error in form.username.errors %}
+              <span style="color: red">{{ error }}</span>
+            {% endfor %}
+          {% endif %}
+        </p>
+      </div>
+      <div>
+        {{ form.password(class="form-control form-control-lg py-2 mb-3", id="form-password", placeholder=form.password.label.text) }}
+        <p>
+          {% if form.password.errors %}
+            {% for error in form.password.errors %}
+              <span style="color: red">{{ error }}</span>
+            {% endfor %}
+          {% endif %}
+        </p>
+      </div>
+      <div>
+        {{ form.email(class="form-control form-control-lg py-2 mb-3", id="form-email", placeholder=form.email.label.text) }}
+        <p>
+          {% if form.email.errors %}
+            {% for error in form.email.errors %}
+              <span style="color: red">{{ error }}</span>
+            {% endfor %}
+          {% endif %}
+        </p>
+      </div>
+      {{ form.submit(class="btn btn-primary", value=form.submit.label.text) }}
+      <div class="py-3 mb-3">
+        <p><a class="btn btn-primary" href="{{ url_for('login') }}" role="button">Вход</a></p>
+      </div>
+    </div
+</form>
+{% endblock content %}

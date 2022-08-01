@@ -62,7 +62,7 @@ flask db upgrade
 ```
 Запустить проект
 ```
-flask run
+flask run -h 0.0.0.0 -p 8000
 ```
 
 ## 3. Технологии
