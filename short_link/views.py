@@ -1,14 +1,14 @@
 from datetime import datetime
-# from pprint import pprint
 
-from flask import flash, redirect, render_template, url_for, request
+from flask import flash, redirect, render_template, request, url_for
 from flask_login import current_user, login_required, login_user, logout_user
+
+from short_link import login_manager
 
 from . import app, constants, db
 from .forms import LinkForm, LoginForm, RegForm
 from .models import URL_map, User
 from .utils import check_short_url, get_unique_short_id
-from short_link import login_manager
 
 
 @app.route('/', methods=['GET', 'POST'])
